@@ -1,0 +1,6 @@
+.vs/
+/*.sdf
+*.vcxproj.user
+/Debug/
+/Release/
+/x64/
