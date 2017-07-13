@@ -157,6 +157,7 @@
     <ClInclude Include="problems_000x.h" />
     <ClInclude Include="problems_001x.h" />
     <ClInclude Include="problems_002x.h" />
+    <ClInclude Include="pdata.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="primes.cpp" />
     <ClCompile Include="problems_000x.cpp" />
     <ClCompile Include="problems_001x.cpp" />
+    <ClCompile Include="problems_002x.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

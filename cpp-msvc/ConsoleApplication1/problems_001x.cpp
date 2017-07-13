@@ -188,3 +188,17 @@ std::string p19()
 {
 	return std::string();
 }
+
+void add_problems_001x(std::vector<pdata>& v)
+{
+	v.push_back(pdata(10, p10, "142913828922"));
+	v.push_back(pdata(11, p11, "70600674"));
+	v.push_back(pdata(12, p12, "76576500"));
+	v.push_back(pdata(13, p13, "5537376230"));
+	v.push_back(pdata(14, p14, "-1"));
+	v.push_back(pdata(15, p15, "-1"));
+	v.push_back(pdata(16, p16, "-1"));
+	v.push_back(pdata(17, p17, "-1"));
+	v.push_back(pdata(18, p18, "-1"));
+	v.push_back(pdata(19, p19, "-1"));
+}

@@ -54,6 +54,9 @@
     <ClInclude Include="problems_002x.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="primes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problems_002x.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

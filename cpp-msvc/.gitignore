@@ -1,6 +1,8 @@
 .vs/
 /*.sdf
 *.vcxproj.user
-/Debug/
-/Release/
-/x64/
+*.VC.opendb
+Debug/
+Release/
+x64/
+ipch/

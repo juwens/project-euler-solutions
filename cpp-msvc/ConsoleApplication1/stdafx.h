@@ -12,7 +12,7 @@
 
 
 // TODO: reference additional headers your program requires here
-
+#define _ITERATOR_DEBUG_LEVEL 0
 #include <vector>
 #include <string>
 #include <sstream>
@@ -25,9 +25,11 @@
 #include <algorithm>
 #include <unordered_map>
 #include <set>
-//#include <map>
+#include <map>
 
+#include "pdata.h"
 #include "primes.h"
 #define INFINT_USE_EXCEPTIONS
 #include "lib\InfInt.h"
+#include <functional>
 
