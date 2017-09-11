@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConsoleApplication1.Contract;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace ConsoleApplication1
 {
-    class problem_0009_special_pythagorean_triplet : IProjectEulerTestableProblem
+    class Problem_0009_special_pythagorean_triplet : IRunnableProblem
     {
         public string Answer
         {

@@ -91,15 +91,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\IRunnableProblem.cs" />
+    <Compile Include="Math\Divisors.cs" />
     <Compile Include="Problem_002x.cs" />
     <Compile Include="problem_006x.cs" />
-    <Compile Include="MyMath.cs" />
+    <Compile Include="Math\MyMath.cs" />
     <Compile Include="PrimefactorCalculator.cs" />
     <Compile Include="problem_0009_jens.cs" />
     <Compile Include="problem_001x.cs" />
-    <Compile Include="ProjectEulerProblem.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="problem_0008_jens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\TestMyMath.cs" />
+    <Compile Include="Tests\TestMyMath2.cs" />
+    <Compile Include="Tests\TestProjectEulerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\p22_names.txt">

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using ConsoleApplication1.Contract;
+using ConsoleApplication1.Math;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ConsoleApplication1
 {
-    class problem_0000_test : IProjectEulerRunnableProblem
+    class Problem_0000_test : IRunnableProblem
     {
         public string Run()
         {
@@ -25,9 +27,9 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0008_jens_largest_product : IProjectEulerRunnableProblem
+    class Problem_0008_jens_largest_product : IRunnableProblem
     {
-        public string answer
+        public string Answer
         {
             get { return "40824"; }
         }

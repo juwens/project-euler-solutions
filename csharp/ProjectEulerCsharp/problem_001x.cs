@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConsoleApplication1.Contract;
+using ConsoleApplication1.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class problem_0010_jens : IProjectEulerTestableProblem
+    class Problem_0010_jens : IRunnableProblem
     {
         private List<long> real_primes;
         public string Run()
@@ -27,7 +29,7 @@ namespace ConsoleApplication1
 
             foreach (long pseudo_prime in pseudo_primes)
             {
-                if (is_prime(pseudo_prime))
+                if (IsPrime(pseudo_prime))
                 {
                     real_primes.Add(pseudo_prime);
                 }
@@ -43,11 +45,12 @@ namespace ConsoleApplication1
 
             return sum.ToString();
         }
-        private bool is_prime(long i)
+
+        private bool IsPrime(long i)
         {
             foreach (long prime in real_primes)
             {
-                if (prime > Math.Sqrt(i)) return true;
+                if (prime > System.Math.Sqrt(i)) return true;
                 if (i % prime == 0) return false;
             }
 
@@ -55,7 +58,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0011_jens : IProjectEulerTestableProblem
+    class Problem_0011_jens : IRunnableProblem
     {
 
         // +---> X
@@ -155,7 +158,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0012_number_of_divisors : IProjectEulerTestableProblem
+    class Problem_0012_number_of_divisors : IRunnableProblem
     {
         public string Run()
         {
@@ -265,7 +268,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0013_jens : IProjectEulerTestableProblem
+    class Problem_0013_jens : IRunnableProblem
     {
         public string Run()
         {
@@ -380,7 +383,7 @@ namespace ConsoleApplication1
 53503534226472524250874054075591789781264330331690";
     }
 
-    class problem_0014_collatz : IProjectEulerTestableProblem
+    class Problem_0014_collatz : IRunnableProblem
     {
 
         public string Run()
@@ -473,7 +476,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0016_digits : IProjectEulerTestableProblem
+    class Problem_0016_digits : IRunnableProblem
     {
 
         public string Run()
@@ -487,7 +490,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0017_number_letter_counts : IProjectEulerTestableProblem
+    class Problem_0017_number_letter_counts : IRunnableProblem
     {
 
         // Komma an erster Stelle, damit es 1-indexiert ist
@@ -547,7 +550,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0018_max_path_sum : IProjectEulerTestableProblem
+    class Problem_0018_max_path_sum : IRunnableProblem
     {
         private class Point
         {
@@ -634,7 +637,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0019_sundays : IProjectEulerTestableProblem
+    class Problem_0019_sundays : IRunnableProblem
     {
         public string Run()
         {
@@ -660,57 +663,57 @@ namespace ConsoleApplication1
     }
 
     [TestClass]
-    public class Test_001x : TestProjectEulerBase
+    public class Test_001x : TestBase
     {
         [TestMethod]
         public async Task Test_Problem_0010()
         {
-            await AssertAnswerAsync(new problem_0010_jens(), "142913828922");
+            await AssertAnswerAsync(new Problem_0010_jens(), "142913828922");
         }
 
         [TestMethod]
         public async Task Test_Problem_0011()
         {
-            await AssertAnswerAsync(new problem_0011_jens(), "70600674");
+            await AssertAnswerAsync(new Problem_0011_jens(), "70600674");
         }
         [TestMethod]
         public async Task Test_Problem_0012()
         {
-            await AssertAnswerAsync(new problem_0012_number_of_divisors(), "76576500");
+            await AssertAnswerAsync(new Problem_0012_number_of_divisors(), "76576500");
         }
         [TestMethod]
         public async Task Test_Problem_0013()
         {
-            await AssertAnswerAsync(new problem_0013_jens(), "5537376230");
+            await AssertAnswerAsync(new Problem_0013_jens(), "5537376230");
         }
         [TestMethod]
         public async Task Test_Problem_0014()
         {
-            await AssertAnswerAsync(new problem_0014_collatz(), "837799");
+            await AssertAnswerAsync(new Problem_0014_collatz(), "837799");
         }
 
         [TestMethod]
         public async Task Test_Problem_0016()
         {
-            await AssertAnswerAsync(new problem_0016_digits(), "1366");
+            await AssertAnswerAsync(new Problem_0016_digits(), "1366");
         }
 
         [TestMethod]
         public async Task Test_Problem_0017()
         {
-            await AssertAnswerAsync(new problem_0017_number_letter_counts(), "21124");
+            await AssertAnswerAsync(new Problem_0017_number_letter_counts(), "21124");
         }
 
         [TestMethod]
         public async Task Test_Problem_0018()
         {
-            await AssertAnswerAsync(new problem_0018_max_path_sum(), "1074");
+            await AssertAnswerAsync(new Problem_0018_max_path_sum(), "1074");
         }
 
         [TestMethod]
         public async Task Test_Problem_0019()
         {
-            await AssertAnswerAsync(new problem_0019_sundays(), "171");
+            await AssertAnswerAsync(new Problem_0019_sundays(), "171");
         }
     }
 }

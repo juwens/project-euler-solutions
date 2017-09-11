@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConsoleApplication1.Contract;
+using ConsoleApplication1.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +12,7 @@ using System.Text.RegularExpressions;
 namespace ConsoleApplication1
 {
 
-    class problem_0067_max_path_sum_2 : IProjectEulerTestableProblem
+    class Problem_0067_max_path_sum_2 : IRunnableProblem
     {
         public string Run()
         {
@@ -20,17 +22,17 @@ namespace ConsoleApplication1
             var file_name = @"Data/Problem_67_triangle.txt";
 
             var pyramid_str = System.IO.File.ReadAllText(file_name);
-            return problem_0018_max_path_sum.solve(pyramid_str).ToString();
+            return Problem_0018_max_path_sum.solve(pyramid_str).ToString();
         }
     }
 
     [TestClass]
-    public class Test_006x : TestProjectEulerBase
+    public class Test_006x : TestBase
     {
         [TestMethod]
         public async void Test_Problem_0068()
         {
-            await AssertAnswerAsync(new problem_0067_max_path_sum_2(), "7273");
+            await AssertAnswerAsync(new Problem_0067_max_path_sum_2(), "7273");
         }
     }
 

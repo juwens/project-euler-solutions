@@ -1,4 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ConsoleApplication1.Contract;
+using ConsoleApplication1.Math;
+using ConsoleApplication1.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,16 +9,17 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using MyMath = ConsoleApplication1.Math;
 
 namespace ConsoleApplication1
 {
-    class problem_0020_factorial_sum : IProjectEulerTestableProblem
+    class Problem_0020_factorial_sum : IRunnableProblem
     {
         public string Run()
         {
             // python: sum = 0; for c in str(math.factorial(100)): sum += int(c)
-            var sum = MyMath
-                    .factorial(100)
+            var sum = MyMath.MyMath
+                    .Factorial(100)
                     .ToString()
                     .Select(char.GetNumericValue)
                     .Sum();
@@ -25,7 +29,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0021_amicabla_numbers : IProjectEulerTestableProblem
+    class Problem_0021_amicabla_numbers : IRunnableProblem
     {
 
         /*
@@ -46,8 +50,8 @@ namespace ConsoleApplication1
 
             for (int a = 1; a < 10000; a++)
             {
-                int b = (int)MyMath.getProperDivisors(a).Sum();
-                int b_dividers_sum = (int)MyMath.getProperDivisors(b).Sum();
+                int b = (int)MyMath.Divisors.GetProperDivisors(a).Sum();
+                int b_dividers_sum = (int)MyMath.Divisors.GetProperDivisors(b).Sum();
 
                 if (a == b_dividers_sum && a != b)
                 {
@@ -69,7 +73,7 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0022_names_score : IProjectEulerTestableProblem
+    class Problem_0022_names_score : IRunnableProblem
     {
 
         public string Run()
@@ -109,9 +113,9 @@ namespace ConsoleApplication1
         }
     }
 
-    class problem_0023_non_abundant_numbers : IProjectEulerTestableProblem
+    class Problem_0023_non_abundant_numbers : IRunnableProblem
     {
-        private string toString(int[] l)
+        private string ToString(int[] l)
         {
             var l2 = l.Select(x => x.ToString()).ToList();
             l2.Sort();
@@ -126,9 +130,9 @@ namespace ConsoleApplication1
 
             var abundant_numbers = new List<int>();
 
-            for (int i = 1; i <= max_number; i++)
+            for (int i = 2; i <= max_number; i += 1)
             {
-                var divisors = MyMath.getProperDivisors(i);
+                var divisors = MyMath.Divisors.GetProperDivisors(i);
                 var divisors_sum = divisors.Sum();
 
                 if (divisors_sum > i) // i is abundant
@@ -145,7 +149,7 @@ namespace ConsoleApplication1
             var doubled_abundand_numbers = new List<int>(abundant_numbers);
             doubled_abundand_numbers.AddRange(abundant_numbers);
 
-            var all_abundant_pairs = MyMath.Combinations<int>(doubled_abundand_numbers, 2);
+            var all_abundant_pairs = MyMath.MyMath.Combinations<int>(doubled_abundand_numbers, 2);
             var abundand_sums = new HashSet<int>(all_abundant_pairs.Select(x => x.Sum()));
 
             var sum = 0;
@@ -168,30 +172,30 @@ namespace ConsoleApplication1
     }
 
     [TestClass]
-    public class Test_002x : TestProjectEulerBase
+    public class Test_002x : TestBase
     {
         [TestMethod]
         public async Task Test_Problem_0020()
         {
-            await AssertAnswerAsync(new problem_0020_factorial_sum(), "648");
+            await AssertAnswerAsync(new Problem_0020_factorial_sum(), "648");
         }
 
         [TestMethod]
         public async Task Test_Problem_0021()
         {
-            await AssertAnswerAsync(new problem_0021_amicabla_numbers(), "31626");
+            await AssertAnswerAsync(new Problem_0021_amicabla_numbers(), "31626");
         }
 
         [TestMethod]
         public async Task Test_Problem_0022()
         {
-            await AssertAnswerAsync(new problem_0022_names_score(), "871198282");
+            await AssertAnswerAsync(new Problem_0022_names_score(), "871198282");
         }
 
         [TestMethod]
         public async Task Test_Problem_0023()
         {
-            await AssertAnswerAsync(new problem_0023_non_abundant_numbers(), "4179871");
+            await AssertAnswerAsync(new Problem_0023_non_abundant_numbers(), "4179871");
         }
     }
 }
