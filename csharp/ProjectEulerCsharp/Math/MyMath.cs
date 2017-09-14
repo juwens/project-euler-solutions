@@ -32,33 +32,43 @@ namespace ConsoleApplication1.Math
          * B X CD -> BC, BD
          * C X D -> CD
          */
-        public static List<int[]> Combinations<T>(IList<int> arrayIn, int k)
+        public static IEnumerable<int[]> Combinations<T>(int[] arrayIn, int k)
         {
-            if (k <= 0) return new List<int[]>();
-            if (k == 1) return arrayIn.Select(x => new int[] { x }).ToList();
+            if (k <= 0)
+{
+                yield return new int[0];
+                yield break;
+            }
 
-            int n = arrayIn.Count;
+            if (k == 1)
+            {
+                foreach (var elm in arrayIn)
+                {
+                    yield return new int[] { elm };
+                }
+                yield break;
+            }
 
-            var arrayOut = new List<int[]>();
-            
+            int n = arrayIn.Length;
+
             for (int i = 0; i + 1 <= (n - k); i++)
             {
                 var to_combine = arrayIn[i];
-                var to_sub_combine = arrayIn.ToList().GetRange(i + 1, n - i - 1);
+                var subLength = n - i - 1;
+                var to_sub_combine = new int[subLength];
+                Array.Copy(arrayIn, i + 1, to_sub_combine, 0, subLength);
                 var sub_combinations = Combinations<int>(to_sub_combine, k - 1);
 
                 foreach (var sub_comb in sub_combinations)
                 {
-                    var tmp = new List<int>();
-                    tmp.Add(to_combine);
-                    tmp.AddRange(sub_comb);
-                    arrayOut.Add(tmp.ToArray());
+                    var tmp = new int[sub_comb.Length + 1];
+                    tmp[0] = to_combine;
+                    Array.Copy(sub_comb, 0, tmp, 1, sub_comb.Length);
+                    yield return tmp;
                 }
             }
 
-            arrayOut.Add(arrayIn.ToList().GetRange(n - k, k).ToArray());
-
-            return arrayOut;
+            yield return arrayIn.ToList().GetRange(n - k, k).ToArray();
         }
 
         public static IEnumerable<IEnumerable<T>> Combinations_solution_from_stackoverflow<T>(this IEnumerable<T> elements, int k)

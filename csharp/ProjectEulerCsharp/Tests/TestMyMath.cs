@@ -13,7 +13,7 @@ namespace ConsoleApplication1.Tests
     {
         private void Test_combinations(IEnumerable<int> to_test, int k, int[][] expected_result)
         {
-            var actual_result = MyMath.MyMath.Combinations<int>(to_test.ToList(), k).ToList();
+            var actual_result = MyMath.MyMath.Combinations<int>(to_test.ToArray(), k).ToList();
 
             for (var i = 0; i < actual_result.Count; i++)
             {

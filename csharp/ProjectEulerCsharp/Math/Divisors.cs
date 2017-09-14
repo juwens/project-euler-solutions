@@ -23,13 +23,15 @@ namespace ConsoleApplication1.Math
         // All Divisors excluding N
         public static IEnumerable<long> GetProperDivisors(long N)
         {
+            var res = new List<long>();
             for (long i = 1; i * 2 <= N; i++)
             {
                 if (N % i == 0)
                 {
-                    yield return i;
+                    res.Add(i);
                 }
             }
+            return res;
         }
 
         /**

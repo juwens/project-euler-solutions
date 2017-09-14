@@ -149,7 +149,7 @@ namespace ConsoleApplication1
             var doubled_abundand_numbers = new List<int>(abundant_numbers);
             doubled_abundand_numbers.AddRange(abundant_numbers);
 
-            var all_abundant_pairs = MyMath.MyMath.Combinations<int>(doubled_abundand_numbers, 2);
+            var all_abundant_pairs = MyMath.MyMath.Combinations<int>(doubled_abundand_numbers.ToArray(), 2);
             var abundand_sums = new HashSet<int>(all_abundant_pairs.Select(x => x.Sum()));
 
             var sum = 0;
