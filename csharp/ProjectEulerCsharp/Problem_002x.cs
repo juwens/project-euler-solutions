@@ -116,10 +116,10 @@ namespace ConsoleApplication1
 
     class Problem_0023_non_abundant_numbers : IRunnableProblem
     {
-        private readonly int max_number = 28123;
         public string Run()
         {
-            var abundant_numbers = new List<int>();
+            const int max_number = 28123;
+            var abundant_numbers = new List<int>(7000);
 
             for (int i = 2; i <= max_number; i += 1)
             {
@@ -131,29 +131,32 @@ namespace ConsoleApplication1
                 }
             }
 
-            var abundand_sums = new HashSet<int>();
-            foreach (var a in abundant_numbers)
+            // faster than HashSet<int>: 1000ms
+            var abundand_sums = new bool[1000 * 1000];
+
+            var abundandNumbersArray = abundant_numbers.ToArray();
+            // faster than foreach or LINQ: 200-300ms
+            for (int a = 0; a < abundandNumbersArray.Length; a++)
             {
-                foreach (var b in abundant_numbers)
+                for (int b = 0; b < abundandNumbersArray.Length / 2; b++)
                 {
-                    abundand_sums.Add(a + b);
+                    var sum = abundandNumbersArray[a] + abundandNumbersArray[b];
+                    abundand_sums[sum] = true;
                 }
             }
 
-            var sum = 0;
             var not_in_abundand_sums = new List<int>();
             for (int i = 1; i <= max_number; i++)
             {
-                if (!abundand_sums.Contains(i))
+                if (!abundand_sums[i])
                 {
                     not_in_abundand_sums.Add(i);
-
                 }
             }
-            //Console.WriteLine(String.Join(",", not_in_abundand_sums));
+            Console.WriteLine(String.Join(",", not_in_abundand_sums));
 
-            sum = not_in_abundand_sums.Sum();
-            return sum.ToString();
+            var res = not_in_abundand_sums.Sum();
+            return res.ToString();
         }
     }
 
