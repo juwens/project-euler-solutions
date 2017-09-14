@@ -46,26 +46,27 @@ namespace ConsoleApplication1
          */
         public string Run()
         {
-            HashSet<int> amicalbe_nrs = new HashSet<int>();
+            var amicalbe_nrs = new HashSet<int>();
 
             for (int a = 1; a < 10000; a++)
             {
                 int b = (int)MyMath.Divisors.GetProperDivisors(a).Sum();
-                int b_dividers_sum = (int)MyMath.Divisors.GetProperDivisors(b).Sum();
+                int a2 = (int)MyMath.Divisors.GetProperDivisors(b).Sum();
 
-                if (a == b_dividers_sum && a != b)
+                if (a == a2 && a != b)
                 {
                     Console.WriteLine("a: {0}, b: {1}", a, b);
                     if (!amicalbe_nrs.Contains(a))
                     {
                         amicalbe_nrs.Add(a);
+                    }
+                    if (!amicalbe_nrs.Contains(b))
+                    {
                         amicalbe_nrs.Add(b);
                     }
-
                 }
             }
 
-            Console.WriteLine("sum: {0}", amicalbe_nrs.Sum());
             //amicalbe_nrs.Sort();
             Console.WriteLine("nrs: {0}", String.Join(", ", amicalbe_nrs.Select(x => x.ToString()).ToArray()));
 
@@ -115,19 +116,9 @@ namespace ConsoleApplication1
 
     class Problem_0023_non_abundant_numbers : IRunnableProblem
     {
-        private string ToString(int[] l)
-        {
-            var l2 = l.Select(x => x.ToString()).ToList();
-            l2.Sort();
-
-            return String.Join(",", l2);
-        }
-
         private readonly int max_number = 28123;
         public string Run()
         {
-            // braucht im Moment 5GB Arbeitsspeicher !!!
-
             var abundant_numbers = new List<int>();
 
             for (int i = 2; i <= max_number; i += 1)
@@ -141,16 +132,14 @@ namespace ConsoleApplication1
                 }
             }
 
-            //var tmp = new List<int>(abundant_numbers);
-            //tmp.Sort();
-            //Console.WriteLine(String.Join(",", tmp));
-            //tmp = null;
-
-            var doubled_abundand_numbers = new List<int>(abundant_numbers);
-            doubled_abundand_numbers.AddRange(abundant_numbers);
-
-            var all_abundant_pairs = MyMath.MyMath.Combinations<int>(doubled_abundand_numbers.ToArray(), 2);
-            var abundand_sums = new HashSet<int>(all_abundant_pairs.Select(x => x.Sum()));
+            var abundand_sums = new HashSet<int>();
+            foreach (var a in abundant_numbers)
+            {
+                foreach (var b in abundant_numbers)
+                {
+                    abundand_sums.Add(a + b);
+                }
+            }
 
             var sum = 0;
             var not_in_abundand_sums = new List<int>();
@@ -159,14 +148,12 @@ namespace ConsoleApplication1
                 if (!abundand_sums.Contains(i))
                 {
                     not_in_abundand_sums.Add(i);
-                    //sum += i;
-                    //Console.WriteLine(i);
-                    //Console.WriteLine(sum);
+
                 }
             }
             Console.WriteLine(String.Join(",", not_in_abundand_sums));
-            sum = not_in_abundand_sums.Sum();
 
+            sum = not_in_abundand_sums.Sum();
             return sum.ToString();
         }
     }
