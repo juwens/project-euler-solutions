@@ -46,17 +46,20 @@ void assert_and_print(const string nr, const function<string(void)> &fn, const s
 using namespace std;
 int main()
 {
-	vector<pdata> problems;
+	vector<reference_wrapper<pdata>> problems;
 
 
 
 	add_problems_000x(problems);
 	add_problems_001x(problems);
 	add_problems_002x(problems);
-	sort(problems.begin(), problems.end(), [](auto a, auto b) -> auto { return a.nr < b.nr; });
 
-	for (const auto& problem : problems)
+	sort(problems.begin(), problems.end(), [](const pdata& a, const pdata& b) -> auto { return a.nr < b.nr; });
+	//sort(problems.begin(), problems.end(), less_than_key());
+
+	for (const auto& problem_ref : problems)
 	{
+		auto problem = problem_ref.get();
 		auto nr = problem.nr;
 		auto fn = problem.fn;
 		assert_and_print(problem.name, fn, problem.expected_res);

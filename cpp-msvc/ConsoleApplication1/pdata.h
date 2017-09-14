@@ -1,24 +1,35 @@
 #pragma once
 
 #include <string>
+using namespace std;
 
 /*
 Problem Data Struct
 */
-struct pdata {
-	int nr;
-	std::string name;
-	std::string expected_res;
-	std::string (*fn) (void);
+class pdata {
+	const int nr;
+	const string name;
+	const string expected_res;
+	string(*fn) (void);
 
-	pdata(const int nr, std::string(*fn) (void), const std::string expected_result) {
-		this->nr = nr;
-		this->name = std::to_string(nr);
+	pdata(const int nr, string(*fn) (void), const string expected_result)
+		: nr(nr),
+		name(to_string(nr)),
+		expected_res(expected_result)
+	{
 		this->fn = fn;
-		this->expected_res = expected_result;
 	}
 
-	pdata() {
+	//pdata(const pdata& src)
+	//	: nr(src.nr),
+	//	name(src.name),
+	//	expected_res(src.expected_res)
+	//{
+	//}
 
-	}
+	//pdata(pdata && p) = default;
+	//pdata& operator=(const pdata& src)
+	//{
+	//	return pdata(src);
+	//};
 };

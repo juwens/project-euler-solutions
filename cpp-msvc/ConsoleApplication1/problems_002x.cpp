@@ -1,4 +1,5 @@
 #include "stdafx.h"
+using namespace std;
 
 std::string p28() {
 	using namespace std;
@@ -12,8 +13,8 @@ std::string p28() {
 
 	return to_string(sum);
 }
+
 std::string p29() {
-	using namespace std;
 	set<InfInt> s;
 
 	for (int8_t a = 2; a <= 100; a++)

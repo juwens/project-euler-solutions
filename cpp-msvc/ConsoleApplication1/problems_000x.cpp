@@ -216,3 +216,15 @@ void add_problems_000x(vector<pdata> &v) {
 	v.push_back(pdata(8, p8, "23514624000"));
 	v.push_back(pdata(9, p9, "31875000"));
 }
+
+void add_problems_000x(std::vector<reference_wrapper<pdata>> &v) {
+	v.push_back(ref(pdata(1, p1, "233168")));
+	v.push_back(pdata(2, p2, "4613732"));
+	v.push_back(pdata(3, p3, "6857"));
+	v.push_back(pdata(4, p4, "906609"));
+	v.push_back(pdata(5, p5, "232792560"));
+	v.push_back(pdata(6, p6, "25164150"));
+	v.push_back(pdata(7, p7, "104743"));
+	v.push_back(pdata(8, p8, "23514624000"));
+	v.push_back(pdata(9, p9, "31875000"));
+}
