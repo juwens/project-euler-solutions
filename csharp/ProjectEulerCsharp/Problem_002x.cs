@@ -123,8 +123,7 @@ namespace ConsoleApplication1
 
             for (int i = 2; i <= max_number; i += 1)
             {
-                var divisors = MyMath.Divisors.GetProperDivisors(i);
-                var divisors_sum = divisors.Sum();
+                var divisors_sum = MyMath.Divisors.GetProperDivisorsSum(i);
 
                 if (divisors_sum > i) // i is abundant
                 {
@@ -151,7 +150,7 @@ namespace ConsoleApplication1
 
                 }
             }
-            Console.WriteLine(String.Join(",", not_in_abundand_sums));
+            //Console.WriteLine(String.Join(",", not_in_abundand_sums));
 
             sum = not_in_abundand_sums.Sum();
             return sum.ToString();

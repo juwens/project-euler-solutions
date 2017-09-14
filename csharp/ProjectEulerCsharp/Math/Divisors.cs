@@ -47,7 +47,32 @@ namespace ConsoleApplication1.Math
             res.Sort();
             return res;
         }
-        
+
+        // All Divisors excluding N
+        public static long GetProperDivisorsSum(long N)
+        {
+            if (N < 0) throw new NotImplementedException();
+            if (N == 0) return 0;
+            if (N == 1) return 0;
+
+            var res = 1L;
+
+            var limit = System.Math.Sqrt(N);
+            if (N % limit == 0)
+            {
+                res += (int)limit;
+            }
+            for (long i = 2; i < limit; i++)
+            {
+                if (N % i == 0)
+                {
+                    res += i;
+                    res += (N / i);
+                }
+            }
+            return res;
+        }
+
         /**
          * 
          * Example 220:
