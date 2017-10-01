@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleApplication1</RootNamespace>
     <AssemblyName>ConsoleApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -80,6 +80,9 @@
     <Optimize>true</Optimize>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -113,6 +116,7 @@
     <Compile Include="Problems_002x\Problem_0021_amicabla_numbers.cs" />
     <Compile Include="Problems_002x\Problem_0022_names_score.cs" />
     <Compile Include="Problems_002x\Problem_0023_non_abundant_numbers.cs" />
+    <Compile Include="Problems_002x\Problem_0024.cs" />
     <Compile Include="problem_006x.cs" />
     <Compile Include="Math\MyMath.cs" />
     <Compile Include="PrimefactorCalculator.cs" />

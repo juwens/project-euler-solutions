@@ -8,9 +8,9 @@ using ConsoleApplication1.Contract;
 
 namespace ConsoleApplication1
 {
-    class Program
+    static class Program
     {
-        static void Main(String[] args)
+        public static void Main(string[] args)
         {
             var targetAssembly = Assembly.GetExecutingAssembly();
             var eulerProblemClasses = targetAssembly.GetTypes()
@@ -22,7 +22,7 @@ namespace ConsoleApplication1
             var number2type = new Dictionary<int, Type>();
             foreach (var @class in eulerProblemClasses)
             {
-                var regexMatch = Regex.Match(@class.Name, @"problem_(\d+)_", RegexOptions.IgnoreCase);
+                var regexMatch = Regex.Match(@class.Name, @"problem_(\d+)($|[^\d])", RegexOptions.IgnoreCase);
 
                 var intString = regexMatch.Groups[1].Value;
                 var nr = int.Parse(intString);

@@ -35,7 +35,7 @@ namespace ConsoleApplication1.Math
         public static IEnumerable<int[]> Combinations<T>(int[] arrayIn, int k)
         {
             if (k <= 0)
-{
+            {
                 yield return new int[0];
                 yield break;
             }
