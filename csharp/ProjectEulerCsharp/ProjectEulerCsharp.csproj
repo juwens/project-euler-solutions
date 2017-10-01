@@ -99,18 +99,31 @@
   <ItemGroup>
     <Compile Include="Contract\IRunnableProblem.cs" />
     <Compile Include="Math\Divisors.cs" />
-    <Compile Include="Problem_002x.cs" />
+    <Compile Include="Problems_001x\Problem_0010.cs" />
+    <Compile Include="Problems_001x\Problem_0011.cs" />
+    <Compile Include="Problems_001x\Problem_0012_number_of_divisors.cs" />
+    <Compile Include="Problems_001x\Problem_0013.cs" />
+    <Compile Include="Problems_001x\Problem_0014_collatz.cs" />
+    <Compile Include="Problems_001x\Problem_0016_digits.cs" />
+    <Compile Include="Problems_001x\Problem_0017_number_letter_counts.cs" />
+    <Compile Include="Problems_001x\Problem_0018_max_path_sum.cs" />
+    <Compile Include="Problems_001x\Problem_0019_sundays.cs" />
+    <Compile Include="Problems_001x\Test_001x.cs" />
+    <Compile Include="Problems_002x\Problem_0020_factorial_sum.cs" />
+    <Compile Include="Problems_002x\Problem_0021_amicabla_numbers.cs" />
+    <Compile Include="Problems_002x\Problem_0022_names_score.cs" />
+    <Compile Include="Problems_002x\Problem_0023_non_abundant_numbers.cs" />
     <Compile Include="problem_006x.cs" />
     <Compile Include="Math\MyMath.cs" />
     <Compile Include="PrimefactorCalculator.cs" />
-    <Compile Include="problem_0009_jens.cs" />
-    <Compile Include="problem_001x.cs" />
+    <Compile Include="Problems_000x\problem_0009_jens.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="problem_0008_jens.cs" />
+    <Compile Include="Problems_000x\problem_0008_jens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TestMyMath.cs" />
     <Compile Include="Tests\TestMyMath2.cs" />
     <Compile Include="Tests\TestProjectEulerBase.cs" />
+    <Compile Include="Problems_002x\Test_002x.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\p22_names.txt">

@@ -1,4 +1,5 @@
 ﻿using ConsoleApplication1.Contract;
+using ConsoleApplication1.Problems_001x;
 using ConsoleApplication1.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

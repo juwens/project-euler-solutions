@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace ConsoleApplication1.Problems_000x
 {
     class Problem_0009_special_pythagorean_triplet : IRunnableProblem
     {
@@ -18,7 +18,7 @@ namespace ConsoleApplication1
         {
             int a, b, c, rounds = 0;
             const int MAX_SUM = 1000;
-            Random rnd = new Random();
+            var rnd = new Random();
             while (true)
             {
                 rounds++;

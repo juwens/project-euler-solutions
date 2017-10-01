@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace ConsoleApplication1.Problems_000x
 {
     class Problem_0000_test : IRunnableProblem
     {

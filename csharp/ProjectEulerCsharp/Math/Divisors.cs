@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1.Math
 {
-    class Divisors
+    static class Divisors
     {
         // All Divisors including N
         public static IEnumerable<long> GetDivisors(long N)
