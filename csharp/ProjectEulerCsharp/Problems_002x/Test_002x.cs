@@ -32,9 +32,8 @@ namespace ConsoleApplication1.Problems_002x
         }
 
         [TestMethod]
-        public async Task Test_Problem_0024()
-        {
-            await AssertAnswerAsync(new Problem_0024(), "2783915460");
-        }
+        public async Task Test_Problem_0024() => await AssertAnswerAsync(new Problem_0024(), "2783915460");
+        [TestMethod]
+        public async Task Test_Problem_0025() => await AssertAnswerAsync(new Problem_0025(), "4782");
     }
 }
