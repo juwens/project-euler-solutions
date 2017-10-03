@@ -23,7 +23,7 @@ namespace ConsoleApplication1.Problems_002x
                 last = currentCopy;
                 index++;
 
-                if (current.ToString().Length == 1000)
+                if (current.ToString().Length == 1_000)
                 {
                     return index.ToString();
                 }

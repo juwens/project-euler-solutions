@@ -119,6 +119,7 @@
     <Compile Include="Problems_002x\Problem_0023_non_abundant_numbers.cs" />
     <Compile Include="Problems_002x\Problem_0024.cs" />
     <Compile Include="Problems_002x\Problem_0025.cs" />
+    <Compile Include="Problems_002x\Problem_0026.cs" />
     <Compile Include="problem_006x.cs" />
     <Compile Include="Math\MyMath.cs" />
     <Compile Include="PrimefactorCalculator.cs" />

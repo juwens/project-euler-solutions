@@ -31,9 +31,8 @@ namespace ConsoleApplication1.Problems_002x
             await AssertAnswerAsync(new Problem_0023_non_abundant_numbers(), "4179871");
         }
 
-        [TestMethod]
-        public async Task Test_Problem_0024() => await AssertAnswerAsync(new Problem_0024(), "2783915460");
-        [TestMethod]
-        public async Task Test_Problem_0025() => await AssertAnswerAsync(new Problem_0025(), "4782");
+        [TestMethod] public async Task Test_Problem_0024() => await AssertAnswerAsync(new Problem_0024(), "2783915460");
+        [TestMethod] public async Task Test_Problem_0025() => await AssertAnswerAsync(new Problem_0025(), "4782");
+        [TestMethod] public async Task Test_Problem_0026() => await AssertAnswerAsync(new Problem_0026(), "983");
     }
 }

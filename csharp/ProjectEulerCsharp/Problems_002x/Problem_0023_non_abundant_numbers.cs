@@ -10,8 +10,8 @@ namespace ConsoleApplication1.Problems_002x
     {
         public string Run()
         {
-            const int max_number = 28123;
-            var abundant_numbers = new List<int>(7000);
+            const int max_number = 28_123;
+            var abundant_numbers = new List<int>(7_000);
 
             for (int i = 2; i <= max_number; i += 1)
             {
@@ -24,7 +24,7 @@ namespace ConsoleApplication1.Problems_002x
             }
 
             // faster than HashSet<int>: 1000ms
-            var abundand_sums = new bool[1000 * 1000];
+            var abundand_sums = new bool[1_000_000];
 
             var abundandNumbersArray = abundant_numbers.ToArray();
             // faster than foreach or LINQ: 200-300ms
