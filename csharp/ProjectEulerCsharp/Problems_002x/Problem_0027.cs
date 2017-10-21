@@ -15,13 +15,14 @@ namespace ConsoleApplication1.Problems_002x
             var nMax = 0L;
             var res = 0L;
 
-            for (long a = -1000; a < 1000; a++)
+            for (long a = -999; a <= 999; a += 2)
             {
-                for (long b = -1000; b <= 1000; b++)
+                for (long b = -1001; b < 1001; b += 2)
                 {
                     for (long n = 0; n < 1000; n++)
                     {
-                        var y = (n * n) + a * n + b;
+                        //var y = (n * n) + a * n + b;
+                        var y = n * (n + a) + b;
                         if (y >= 0 && pfc.IsPrime(y))
                         {
                             if (n > nMax)
