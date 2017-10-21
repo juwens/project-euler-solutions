@@ -17,7 +17,7 @@ namespace ConsoleApplication1
             primeNumbers.Add(2);
             primeNumbers.Add(3);
         }
-        public static PrimefactorCalculator getInstance()
+        public static PrimefactorCalculator GetInstance()
         {
             if (inst == null)
             {
@@ -25,8 +25,16 @@ namespace ConsoleApplication1
             }
             return inst;
         }
-        public Dictionary<long, long> getPrimeFactors(long number)
+
+        internal bool IsPrime(long y)
         {
+            return GetPrimeFactors(y).Count == 1;
+        }
+
+        public Dictionary<long, long> GetPrimeFactors(long number)
+        {
+            if (number < 0) throw new ArgumentException();
+
             if (number == 0) return new Dictionary<long, long>() { {0, 0} };
             if (number == 1) return new Dictionary<long, long>() { { 1, 1 } };
 

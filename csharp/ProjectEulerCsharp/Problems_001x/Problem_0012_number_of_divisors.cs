@@ -64,14 +64,14 @@ namespace ConsoleApplication1.Problems_001x
             long max_divisors = 0;
             var sw = new System.Diagnostics.Stopwatch();
 
-            PrimefactorCalculator pfc = PrimefactorCalculator.getInstance();
+            var pfc = PrimefactorCalculator.GetInstance();
             while (divisors < divisors_to_find)
             {
                 i++;
                 step = step + i;
 
                 sw.Restart();
-                Dictionary<long, long> pfactors = pfc.getPrimeFactors(step);
+                Dictionary<long, long> pfactors = pfc.GetPrimeFactors(step);
                 long pf_time_ext = sw.ElapsedMilliseconds;
 
                 sw.Restart();

@@ -95,7 +95,7 @@ namespace ConsoleApplication1.Tests
         public void TestPrimeFactorsWith28()
         {
             CollectionAssert.AreEqual(
-                (System.Collections.ICollection)PrimefactorCalculator.getInstance().getPrimeFactors(28),
+                (System.Collections.ICollection)PrimefactorCalculator.GetInstance().GetPrimeFactors(28),
                 (System.Collections.ICollection)new Dictionary<long, long>()
                 {
                    {2, 2},
@@ -108,7 +108,7 @@ namespace ConsoleApplication1.Tests
         public void TestPrimeFactorsWith220()
         {
             CollectionAssert.AreEqual(
-                (System.Collections.ICollection)PrimefactorCalculator.getInstance().getPrimeFactors(220),
+                (System.Collections.ICollection)PrimefactorCalculator.GetInstance().GetPrimeFactors(220),
                 (System.Collections.ICollection)new Dictionary<long, long>()
                 {
                    {2, 2},

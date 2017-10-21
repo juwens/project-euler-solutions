@@ -81,7 +81,7 @@ namespace ConsoleApplication1.Math
          */
         private static long[] GetAllDivisorsViaPrimeFactorization(long N, bool excludeN = false)
         {
-            var prime_facs = PrimefactorCalculator.getInstance().getPrimeFactors(N);
+            var prime_facs = PrimefactorCalculator.GetInstance().GetPrimeFactors(N);
 
             var divisors = new HashSet<long>(); // prime_facs.Keys.ToList();
             divisors.Add(1);
